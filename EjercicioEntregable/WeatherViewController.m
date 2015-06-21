@@ -17,12 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _dataPicker = @[@"Seville,es", @"Madrid,es", @"London,uk", @"Berlin,de", @"Paris,fr", @"Rome,it", @"NewYork,us", @"Shanghai,ch", @"Moscow,ru"];
+    _dataPicker = @[@"Seville,es", @"Madrid,es", @"London,uk", @"Berlin,de", @"Paris,fr", @"Rome,it", @"NewYork,us", @"Moscow,ru"];
     
     _cityPicker.delegate = self; 
     _cityPicker.dataSource = self;
     
-    NSMutableString *urlString = [[NSMutableString alloc]initWithString:@"http://api.openweathermap.org/data/2.5/weather?q="];
+    NSMutableString *urlString = [[NSMutableString alloc]initWithString:@"http://api.openweathermap.org/data/2.5/weather?units=metric&q="];
     [urlString appendString: _dataPicker[0]];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
@@ -30,7 +30,14 @@
         if (data.length > 0 && connectionError == nil){
             NSDictionary *weatherInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
             NSArray *weather = [weatherInfo valueForKey:@"weather"];
+            NSLog(@"%@", weatherInfo );
             [_weatherLabel setText:[NSString stringWithFormat:@"%@",[weather[0] valueForKey:@"description"]]];
+            [_velocityLabel setText:[NSString stringWithFormat:@"Wind speed: %@m/s",[weatherInfo valueForKeyPath:@"wind.speed"]]];
+            [_temperatureLabel setText:[NSString stringWithFormat:@"Temp: %@ºC",[weatherInfo valueForKeyPath:@"main.temp"]]];
+            NSURL *urlimage = [NSURL URLWithString:[NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png", [weather[0] valueForKey:@"icon"]]];
+            NSData *data = [NSData dataWithContentsOfURL:urlimage];
+            UIImage *img = [[UIImage alloc] initWithData:data];
+            [_imageWeather setImage:img];
         }
     }];
     
@@ -60,7 +67,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    NSMutableString *urlString = [[NSMutableString alloc]initWithString:@"http://api.openweathermap.org/data/2.5/weather?q="];
+    NSMutableString *urlString = [[NSMutableString alloc]initWithString:@"http://api.openweathermap.org/data/2.5/weather?units=metric&q="];
     [urlString appendString: _dataPicker[row]];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
@@ -68,9 +75,17 @@
         if (data.length > 0 && connectionError == nil){
             NSDictionary *weatherInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
             NSArray *weather = [weatherInfo valueForKey:@"weather"];
+            NSLog(@"%@", weatherInfo );
             [_weatherLabel setText:[NSString stringWithFormat:@"%@",[weather[0] valueForKey:@"description"]]];
+            [_velocityLabel setText:[NSString stringWithFormat:@"Wind speed: %@m/s",[weatherInfo valueForKeyPath:@"wind.speed"]]];
+            [_temperatureLabel setText:[NSString stringWithFormat:@"Temp: %@ºC",[weatherInfo valueForKeyPath:@"main.temp"]]];
+            NSURL *urlimage = [NSURL URLWithString:[NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png", [weather[0] valueForKey:@"icon"]]];
+            NSData *data = [NSData dataWithContentsOfURL:urlimage];
+            UIImage *img = [[UIImage alloc] initWithData:data];
+            [_imageWeather setImage:img];
         }
     }];
+
 }
 
 /*

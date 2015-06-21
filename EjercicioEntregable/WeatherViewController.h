@@ -12,4 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *cityPicker;
 @property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
 @property NSArray* dataPicker;
+@property (weak, nonatomic) IBOutlet UILabel *velocityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageWeather;
 @end
