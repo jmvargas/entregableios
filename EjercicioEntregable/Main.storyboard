@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-93" y="268"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Xlk-5K-eon">
             <objects>
-                <viewController id="YHy-8x-SYn" sceneMemberID="viewController">
+                <viewController id="YHy-8x-SYn" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SpR-7Z-weK"/>
                         <viewControllerLayoutGuide type="bottom" id="Mgu-qk-MP5"/>
@@ -65,6 +65,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="178" y="389" width="44" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="submitButton:" destination="YHy-8x-SYn" eventType="touchUpInside" id="ABY-Sy-xfT"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="El usuario o contraseña no son correctos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojr-Fr-po5">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -108,6 +111,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Fwq-z1-lGh"/>
+                    <connections>
+                        <outlet property="inputPassword" destination="DHd-BH-8Ja" id="rDI-wg-Mw9"/>
+                        <outlet property="inputUser" destination="YgI-jG-uce" id="PpP-oc-d2B"/>
+                        <outlet property="labelError" destination="ojr-Fr-po5" id="jVm-bb-5WP"/>
+                        <outlet property="submitButton" destination="pKd-Wk-h6x" id="qCt-iQ-pvO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3Y-ga-Kjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
