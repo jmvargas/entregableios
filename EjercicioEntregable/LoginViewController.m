@@ -41,6 +41,7 @@
         [alert show];
     }else{
         [UserPreferences savePreferencesFromKey:@"user_name" value:[_inputUser text]];
+        [self performSegueWithIdentifier:@"segueToWeatherView" sender:self];
     }
 }
 @end

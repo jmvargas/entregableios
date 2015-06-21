@@ -52,7 +52,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce tu contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-BH-8Ja">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="65" y="285" width="270" height="30"/>
                                 </variation>
@@ -104,11 +104,74 @@
                         <outlet property="inputPassword" destination="DHd-BH-8Ja" id="rDI-wg-Mw9"/>
                         <outlet property="inputUser" destination="YgI-jG-uce" id="PpP-oc-d2B"/>
                         <outlet property="submitButton" destination="pKd-Wk-h6x" id="qCt-iQ-pvO"/>
+                        <segue destination="Elp-0Y-4eh" kind="push" identifier="segueToWeatherView" id="1TH-PT-UtU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3Y-ga-Kjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="724.5" y="268"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="9rB-Bv-XHz">
+            <objects>
+                <viewController id="Elp-0Y-4eh" customClass="WeatherViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I4U-sm-oBr"/>
+                        <viewControllerLayoutGuide type="bottom" id="cvZ-g0-8dZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zsx-PW-WVr">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6o-EC-xqB">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="36" y="155" width="329" height="162"/>
+                                </variation>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione una ciudad para conocer el estado del tiempo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-z2-dHW">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="48" y="82" width="305" height="65"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando datos..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8b-5e-M8I">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="46" y="336" width="309" height="87"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="y6o-EC-xqB"/>
+                                <exclude reference="bAC-z2-dHW"/>
+                                <exclude reference="W8b-5e-M8I"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="y6o-EC-xqB"/>
+                                <include reference="bAC-z2-dHW"/>
+                                <include reference="W8b-5e-M8I"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="PE3-QN-iqq"/>
+                    <connections>
+                        <outlet property="cityPicker" destination="y6o-EC-xqB" id="Rcl-GA-BsE"/>
+                        <outlet property="weatherLabel" destination="W8b-5e-M8I" id="LJZ-f7-eK7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZe-vm-mUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="268"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,7 @@
 		AD7FB1781B36993F00792035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7FB1771B36993F00792035 /* Main.storyboard */; };
 		AD7FB17B1B369F0100792035 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB17A1B369F0100792035 /* LoginViewController.m */; };
 		AD7FB17F1B36A85F00792035 /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB17E1B36A85F00792035 /* UserPreferences.m */; };
+		AD7FB1821B36EBF800792035 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB1811B36EBF800792035 /* WeatherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		AD7FB17A1B369F0100792035 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AD7FB17D1B36A85F00792035 /* UserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
 		AD7FB17E1B36A85F00792035 /* UserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPreferences.m; sourceTree = "<group>"; };
+		AD7FB1801B36EBF800792035 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		AD7FB1811B36EBF800792035 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				AD7FB17C1B36A83600792035 /* Data */,
-				AD7FB1791B369F0100792035 /* LoginViewController.h */,
-				AD7FB17A1B369F0100792035 /* LoginViewController.m */,
 				AD7FB1531B3698C200792035 /* AppDelegate.h */,
 				AD7FB1541B3698C200792035 /* AppDelegate.m */,
 				AD7FB1561B3698C200792035 /* ViewController.h */,
@@ -98,6 +99,7 @@
 				AD7FB15E1B3698C200792035 /* LaunchScreen.xib */,
 				AD7FB14F1B3698C200792035 /* Supporting Files */,
 				AD7FB1771B36993F00792035 /* Main.storyboard */,
+				AD7FB1831B36EC0C00792035 /* ViewControllers */,
 			);
 			path = EjercicioEntregable;
 			sourceTree = "<group>";
@@ -135,6 +137,17 @@
 				AD7FB17E1B36A85F00792035 /* UserPreferences.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		AD7FB1831B36EC0C00792035 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD7FB1791B369F0100792035 /* LoginViewController.h */,
+				AD7FB17A1B369F0100792035 /* LoginViewController.m */,
+				AD7FB1801B36EBF800792035 /* WeatherViewController.h */,
+				AD7FB1811B36EBF800792035 /* WeatherViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7FB17B1B369F0100792035 /* LoginViewController.m in Sources */,
+				AD7FB1821B36EBF800792035 /* WeatherViewController.m in Sources */,
 				AD7FB1581B3698C200792035 /* ViewController.m in Sources */,
 				AD7FB1551B3698C200792035 /* AppDelegate.m in Sources */,
 				AD7FB17F1B36A85F00792035 /* UserPreferences.m in Sources */,
