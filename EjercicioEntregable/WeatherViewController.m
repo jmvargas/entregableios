@@ -17,10 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _dataPicker = @[@"Item 1", @"Item 2", @"Item 3", @"Item 4", @"Item 5", @"Item 6"];
+    _dataPicker = @[@"Seville,es", @"Madrid,es", @"London,uk", @"Berlin,de", @"Paris,fr", @"Rome,it", @"NewYork,us", @"Shanghai,ch", @"Moscow,ru"];
     
     _cityPicker.delegate = self; 
     _cityPicker.dataSource = self;
+    
+    NSMutableString *urlString = [[NSMutableString alloc]initWithString:@"http://api.openweathermap.org/data/2.5/weather?q="];
+    [urlString appendString: _dataPicker[0]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data.length > 0 && connectionError == nil){
+            NSDictionary *weatherInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+            NSArray *weather = [weatherInfo valueForKey:@"weather"];
+            [_weatherLabel setText:[NSString stringWithFormat:@"%@",[weather[0] valueForKey:@"description"]]];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +59,19 @@
     return _dataPicker[row];
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    NSMutableString *urlString = [[NSMutableString alloc]initWithString:@"http://api.openweathermap.org/data/2.5/weather?q="];
+    [urlString appendString: _dataPicker[row]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data.length > 0 && connectionError == nil){
+            NSDictionary *weatherInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+            NSArray *weather = [weatherInfo valueForKey:@"weather"];
+            [_weatherLabel setText:[NSString stringWithFormat:@"%@",[weather[0] valueForKey:@"description"]]];
+        }
+    }];
+}
 
 /*
 #pragma mark - Navigation
