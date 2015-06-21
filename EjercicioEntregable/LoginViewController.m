@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "UserPreferences.h"
 
 @interface LoginViewController ()
 
@@ -36,9 +37,10 @@
 
 - (IBAction)submitButton:(id)sender {
     if ([[_inputUser text] length] == 0 || [[_inputPassword text]length] == 0) {
-        [_labelError setHidden:false];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Usuario incorrecto" message:@"El usuario o la contraseña introducidos no son correctos" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
+        [alert show];
     }else{
-        [_labelError setHidden:true];
+        [UserPreferences savePreferencesFromKey:@"user_name" value:[_inputUser text]];
     }
 }
 @end

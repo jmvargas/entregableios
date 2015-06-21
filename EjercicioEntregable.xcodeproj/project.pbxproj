@@ -15,6 +15,7 @@
 		AD7FB16C1B3698C200792035 /* EjercicioEntregableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB16B1B3698C200792035 /* EjercicioEntregableTests.m */; };
 		AD7FB1781B36993F00792035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7FB1771B36993F00792035 /* Main.storyboard */; };
 		AD7FB17B1B369F0100792035 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB17A1B369F0100792035 /* LoginViewController.m */; };
+		AD7FB17F1B36A85F00792035 /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB17E1B36A85F00792035 /* UserPreferences.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		AD7FB1771B36993F00792035 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AD7FB1791B369F0100792035 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AD7FB17A1B369F0100792035 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		AD7FB17D1B36A85F00792035 /* UserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
+		AD7FB17E1B36A85F00792035 /* UserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPreferences.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 		AD7FB14E1B3698C200792035 /* EjercicioEntregable */ = {
 			isa = PBXGroup;
 			children = (
+				AD7FB17C1B36A83600792035 /* Data */,
 				AD7FB1791B369F0100792035 /* LoginViewController.h */,
 				AD7FB17A1B369F0100792035 /* LoginViewController.m */,
 				AD7FB1531B3698C200792035 /* AppDelegate.h */,
@@ -122,6 +126,15 @@
 				AD7FB16A1B3698C200792035 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD7FB17C1B36A83600792035 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AD7FB17D1B36A85F00792035 /* UserPreferences.h */,
+				AD7FB17E1B36A85F00792035 /* UserPreferences.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +240,7 @@
 				AD7FB17B1B369F0100792035 /* LoginViewController.m in Sources */,
 				AD7FB1581B3698C200792035 /* ViewController.m in Sources */,
 				AD7FB1551B3698C200792035 /* AppDelegate.m in Sources */,
+				AD7FB17F1B36A85F00792035 /* UserPreferences.m in Sources */,
 				AD7FB1521B3698C200792035 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
