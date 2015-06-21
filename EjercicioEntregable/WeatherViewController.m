@@ -7,6 +7,7 @@
 //
 
 #import "WeatherViewController.h"
+#import "UserPreferences.h"
 
 @interface WeatherViewController ()
 
@@ -38,6 +39,8 @@
             NSData *data = [NSData dataWithContentsOfURL:urlimage];
             UIImage *img = [[UIImage alloc] initWithData:data];
             [_imageWeather setImage:img];
+            [UserPreferences savePreferencesFromKey:@"lat" value:[weatherInfo valueForKeyPath:@"coord.lat"]];
+            [UserPreferences savePreferencesFromKey:@"lon" value:[weatherInfo valueForKeyPath:@"coord.lon"]];
         }
     }];
     
@@ -83,6 +86,8 @@
             NSData *data = [NSData dataWithContentsOfURL:urlimage];
             UIImage *img = [[UIImage alloc] initWithData:data];
             [_imageWeather setImage:img];
+            [UserPreferences savePreferencesFromKey:@"lat" value:[weatherInfo valueForKeyPath:@"coord.lat"]];
+            [UserPreferences savePreferencesFromKey:@"lon" value:[weatherInfo valueForKeyPath:@"coord.lon"]];
         }
     }];
 

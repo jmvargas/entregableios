@@ -17,6 +17,8 @@
 		AD7FB17B1B369F0100792035 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB17A1B369F0100792035 /* LoginViewController.m */; };
 		AD7FB17F1B36A85F00792035 /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB17E1B36A85F00792035 /* UserPreferences.m */; };
 		AD7FB1821B36EBF800792035 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB1811B36EBF800792035 /* WeatherViewController.m */; };
+		AD7FB1851B3769FD00792035 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7FB1841B3769FD00792035 /* MapKit.framework */; };
+		AD7FB1881B376A8A00792035 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FB1871B376A8A00792035 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		AD7FB17E1B36A85F00792035 /* UserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPreferences.m; sourceTree = "<group>"; };
 		AD7FB1801B36EBF800792035 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		AD7FB1811B36EBF800792035 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		AD7FB1841B3769FD00792035 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AD7FB1861B376A8A00792035 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		AD7FB1871B376A8A00792035 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7FB1851B3769FD00792035 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +78,7 @@
 		AD7FB1431B3698C200792035 = {
 			isa = PBXGroup;
 			children = (
+				AD7FB1841B3769FD00792035 /* MapKit.framework */,
 				AD7FB14E1B3698C200792035 /* EjercicioEntregable */,
 				AD7FB1681B3698C200792035 /* EjercicioEntregableTests */,
 				AD7FB14D1B3698C200792035 /* Products */,
@@ -142,6 +149,8 @@
 		AD7FB1831B36EC0C00792035 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AD7FB1861B376A8A00792035 /* MapViewController.h */,
+				AD7FB1871B376A8A00792035 /* MapViewController.m */,
 				AD7FB1791B369F0100792035 /* LoginViewController.h */,
 				AD7FB17A1B369F0100792035 /* LoginViewController.m */,
 				AD7FB1801B36EBF800792035 /* WeatherViewController.h */,
@@ -199,6 +208,11 @@
 				TargetAttributes = {
 					AD7FB14B1B3698C200792035 = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					AD7FB1641B3698C200792035 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -256,6 +270,7 @@
 				AD7FB1551B3698C200792035 /* AppDelegate.m in Sources */,
 				AD7FB17F1B36A85F00792035 /* UserPreferences.m in Sources */,
 				AD7FB1521B3698C200792035 /* main.m in Sources */,
+				AD7FB1881B376A8A00792035 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

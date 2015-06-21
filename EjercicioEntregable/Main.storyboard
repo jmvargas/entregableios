@@ -170,6 +170,18 @@
                                     <rect key="frame" x="170" y="321" width="61" height="55"/>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvH-r8-lhQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Ver ciudad en mapa">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="132" y="513" width="137" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="vHI-JM-WpF" kind="show" id="pe5-Fp-VwH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -180,6 +192,7 @@
                                 <exclude reference="g93-Yi-hDq"/>
                                 <exclude reference="T2x-AA-yPl"/>
                                 <exclude reference="a2I-qh-td1"/>
+                                <exclude reference="CvH-r8-lhQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -190,6 +203,7 @@
                                 <include reference="g93-Yi-hDq"/>
                                 <include reference="T2x-AA-yPl"/>
                                 <include reference="a2I-qh-td1"/>
+                                <include reference="CvH-r8-lhQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -204,7 +218,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZe-vm-mUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="268"/>
+            <point key="canvasLocation" x="1662" y="268"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="dnV-eI-QrZ">
+            <objects>
+                <viewController id="vHI-JM-WpF" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xgt-WZ-MkE"/>
+                        <viewControllerLayoutGuide type="bottom" id="i7D-MZ-eq4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M4s-rI-tyB">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-ZT-6cD">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="110" width="400" height="570"/>
+                                </variation>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-sf-Y1j">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Gráfico"/>
+                                    <segment title="Satélite"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="74" width="322" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fSR-Y8-M0x">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Gráfico"/>
+                                    <segment title="Satélite"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="74" width="322" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="mapTypeValueChanged:" destination="vHI-JM-WpF" eventType="valueChanged" id="lt9-Rq-ej4"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Ycx-ZT-6cD"/>
+                                <exclude reference="DHA-sf-Y1j"/>
+                                <exclude reference="fSR-Y8-M0x"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Ycx-ZT-6cD"/>
+                                <include reference="DHA-sf-Y1j"/>
+                                <include reference="fSR-Y8-M0x"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="Ycx-ZT-6cD" id="G8Q-9U-dk8"/>
+                        <outlet property="mapType" destination="fSR-Y8-M0x" id="F8j-80-3EF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmb-Q8-PrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2550" y="268"/>
         </scene>
     </scenes>
 </document>
