@@ -26,8 +26,6 @@
     mapRegion.span.longitudeDelta = 0.02;
     _map.region = mapRegion;
     [_map setMapType:MKMapTypeStandard];
-    [_mapType setEnabled:true forSegmentAtIndex:0];
-    [_mapType setEnabled:false forSegmentAtIndex:1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,14 +33,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)mapTypeValueChanged:(id)sender {
-    if([_mapType isEnabledForSegmentAtIndex: 0]){
-        [_mapType setEnabled:false forSegmentAtIndex:1];
-        [_map setMapType:MKMapTypeStandard];
-    }else if([_mapType isEnabledForSegmentAtIndex:1]){
-        [_mapType setEnabled:false forSegmentAtIndex:0];
+- (IBAction)changeViewMode:(UIButton *)sender {
+    if([_map mapType] == MKMapTypeStandard){
         [_map setMapType:MKMapTypeSatellite];
-        
+    }else{
+        [_map setMapType:MKMapTypeStandard];
+
     }
 }
 

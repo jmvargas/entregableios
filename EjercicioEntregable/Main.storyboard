@@ -120,6 +120,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cvZ-g0-8dZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zsx-PW-WVr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6o-EC-xqB">
@@ -229,6 +230,7 @@
                         <viewControllerLayoutGuide type="bottom" id="i7D-MZ-eq4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M4s-rI-tyB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-ZT-6cD">
@@ -237,49 +239,35 @@
                                     <rect key="frame" x="0.0" y="110" width="400" height="570"/>
                                 </variation>
                             </mapView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-sf-Y1j">
-                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
-                                <segments>
-                                    <segment title="Gráfico"/>
-                                    <segment title="Satélite"/>
-                                </segments>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-cw-vO7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cambiar modo de visualización">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="39" y="74" width="322" height="29"/>
-                                </variation>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fSR-Y8-M0x">
-                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
-                                <segments>
-                                    <segment title="Gráfico"/>
-                                    <segment title="Satélite"/>
-                                </segments>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="39" y="74" width="322" height="29"/>
+                                    <rect key="frame" x="93" y="72" width="215" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="mapTypeValueChanged:" destination="vHI-JM-WpF" eventType="valueChanged" id="lt9-Rq-ej4"/>
+                                    <action selector="changeViewMode:" destination="vHI-JM-WpF" eventType="touchUpInside" id="eBR-Qm-1gn"/>
                                 </connections>
-                            </segmentedControl>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ycx-ZT-6cD"/>
-                                <exclude reference="DHA-sf-Y1j"/>
-                                <exclude reference="fSR-Y8-M0x"/>
+                                <exclude reference="gLn-cw-vO7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Ycx-ZT-6cD"/>
-                                <include reference="DHA-sf-Y1j"/>
-                                <include reference="fSR-Y8-M0x"/>
+                                <include reference="gLn-cw-vO7"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="map" destination="Ycx-ZT-6cD" id="G8Q-9U-dk8"/>
-                        <outlet property="mapType" destination="fSR-Y8-M0x" id="F8j-80-3EF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hmb-Q8-PrM" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,4 @@
 
 @interface MapViewController : UIViewController
 @property (strong, nonatomic) IBOutlet MKMapView *map;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *mapType;
-
 @end
